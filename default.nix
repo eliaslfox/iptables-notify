@@ -1,2 +1,2 @@
-let nixpkgs = import <nixpkgs> {};
-in nixpkgs.haskellPackages.callCabal2nix "iptables-notify" ./. {}
+{ pkgs, ... }:
+pkgs.haskellPackages.callCabal2nix "iptables-notify" ./. {}
