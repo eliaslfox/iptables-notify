@@ -26,7 +26,7 @@ regex = Regex.mkRegex [r|\[[0-9]+\.[0-9]+\] refused connection\: IN=([A-z0-9]*) 
 readThread :: IO ()
 readThread =
     let
-        process = (Process.proc "/run/current-system/sw/bin/dmesg" ["-w"])
+        process = (Process.proc "dmesg" ["-w"])
            { Process.std_out = Process.CreatePipe
            , Process.std_err = Process.CreatePipe
            }
@@ -47,7 +47,7 @@ readThread =
                     let
                         str = "Blocked packet from " <> src
                     in do
-                        Process.createProcess $ (Process.proc "/home/elf/.nix-profile/bin/notify-send" [str])
+                        Process.createProcess $ (Process.proc "notify-send" [str])
                             { Process.std_out = Process.Inherit
                             , Process.std_err = Process.Inherit
                             }
