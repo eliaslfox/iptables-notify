@@ -1,0 +1,26 @@
+name:                iptables-notify
+version:             0.1.0.0
+#synopsis:
+#description:
+homepage:            https://github.com/eliaslfox/iptables-notify#readme
+license:             BSD3
+author:              Elias Lawson-Fox
+maintainer:          me@eliaslfox.com
+copyright:           GPL
+category:            web
+extra-source-files:
+- README.md
+
+ghc-options:
+  - -threaded
+
+dependencies:
+  - base >= 4.7 && < 5
+  - process
+  - regex-compat
+  - raw-strings-qq
+
+executables:
+  iptables-notify:
+    source-dirs:      src
+    main:             Main.hs

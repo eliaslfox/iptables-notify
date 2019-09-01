@@ -1,0 +1,4 @@
+iptables-notify.cabal
+result
+dist/
+.stack-work/
